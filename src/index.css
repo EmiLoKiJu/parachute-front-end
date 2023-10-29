@@ -8,6 +8,11 @@
     src: url('@/assets/font/Roboto-Regular.ttf');
   }
 
+  @font-face {
+    font-family: 'viga';
+    src: url('@/assets/font/Viga-Regular.ttf');
+  }
+
   /* h1,
   h2,
   h3,

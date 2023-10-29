@@ -15,7 +15,7 @@ export default function Router() {
       errorElement: <ErrorPage />,
       children: [
         {
-          path: "/A",
+          path: "/parachutes",
           element: < ComponentA/>,
           children: []
         },

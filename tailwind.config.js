@@ -17,7 +17,7 @@ export default {
       },
       fontFamily: {
         roboto: ['roboto', 'sans'],
-        // mont: ['Montserrat-Regular', 'sans-serif'],
+        viga: ['viga', 'sans'],
       },
       // backgroundImage:{
       //   'hero' : 'url(@/assets/images/hero/hero-1.jpg)',

@@ -4,7 +4,7 @@ export default function Aside() {
   
   const links = [
     {label: 'Home', href: "/"},
-    {label: 'A', href: "/A"},
+    {label: 'Parachutes', href: "/parachutes"},
     {label: 'B', href: "/B"},
     {label: 'C', href: "/C"},
   ]
