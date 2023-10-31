@@ -7,8 +7,8 @@ export default function Home() {
       <div className="aside_container w-[15%] border border-r-1">
         <Aside/>
       </div>
-      <div className="main_wrapper w-[85%] flex flex-col justify-center">
-        <main className="home_sub_pages">
+      <div className="main_wrapper w-[85%] border border-red-300 flex flex-col justify-center">
+        <main className="home_sub_pages border">
             <Outlet/>
         </main>
       </div>

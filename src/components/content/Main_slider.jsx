@@ -1,6 +1,6 @@
 import ResponsiveSlider from "@/components/slider/Slick_slider";
 
-export default function ParachuteSlider() {
+export default function MainSlider() {
   return(
     <div className="font-viga">
       <div className="title-wrapper text-center">
