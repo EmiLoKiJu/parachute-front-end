@@ -4,7 +4,7 @@ export default function Aside() {
   
   const links = [
     {label: 'Home', href: "/"},
-    {label: 'A', href: "/A"},
+    {label: 'Parachutes', href: "/parachutes"},
     {label: 'B', href: "/B"},
     {label: 'C', href: "/C"},
   ]
@@ -18,15 +18,13 @@ export default function Aside() {
   });
 
   return(
-    <aside className="h-screen w-[300px] border border-red-600">
-      <div>
-        <p>Navigation panel and logo here</p>
+    <aside className="navigation_panel pl-2">
+        <p className="px-3">Navigation panel is here and logo here</p>
         <nav>
           <ul>
             { links_ajax }
           </ul>
         </nav>
-      </div>
     </aside>
   );
 }
