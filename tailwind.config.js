@@ -10,10 +10,10 @@ export default {
         center: true,
       },
       colors: {
-        'brand_color': '#F9B809',
-        'brand_green': '#99C110',
-        'brand_orange': '##FFC600',
-        'brand_blue': '#10BBB5'
+        'brand_color': '#f9b809',
+        'brand_green': '#99c110',
+        'brand_orange': '##ffc600',
+        'brand_blue': '#10bbb5'
       },
       fontFamily: {
         roboto: ['roboto', 'sans'],
