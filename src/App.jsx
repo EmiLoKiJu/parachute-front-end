@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import Reservation from './components/content/reservation';
 function App() {
   let isAuthorized = true;
