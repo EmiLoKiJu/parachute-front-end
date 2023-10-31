@@ -19,7 +19,7 @@ export default function Social_media() {
 
   return(
     <div className="social_media_container inline-block">
-      <ul className='flex space-x-2'>
+      <ul className='flex space-x-6'>
         {social_media_ajax}
       </ul>
     </div>
