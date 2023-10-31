@@ -10,6 +10,7 @@ export default {
         center: true,
       },
       colors: {
+        // color for hover
         'brand_color': '#f9b809',
         'brand_green': '#99c110',
         'brand_orange': '##ffc600',

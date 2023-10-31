@@ -1,7 +1,9 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from '@/pages/Home';
 import ErrorPage from '@/components/ErrorPage';
-import ParachuteSlider from '@/components/content/Parachute_slider';
+import MainSlider from '@/components/content/Main_slider';
+import DetailsCard from '@/pages/Details_page';
+
 import ComponentB from '@/components/content/ComponentB';
 import ComponentC from '@/components/content/ComponentC';
 
@@ -16,7 +18,12 @@ export default function Router() {
       children: [
         {
           path: "/parachutes",
-          element: < ParachuteSlider/>,
+          element: < MainSlider/>,
+          children: []
+        },
+        {
+          path: "/parachutes/:id",
+          element: <DetailsCard/>,
           children: []
         },
         {
