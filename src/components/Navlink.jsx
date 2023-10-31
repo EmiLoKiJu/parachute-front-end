@@ -10,6 +10,8 @@ export default function NavL({label, href}) {
           isPending ? "pending" : "",
           isActive ? "active" : "",
           isTransitioning ? "transitioning" : "",
+          "py-2 px-3 w-full uppercase hover:text-white hover:bg-brand_green",
+          "font-viga tracking-wider"
         ].join(" ")
       }
     >
