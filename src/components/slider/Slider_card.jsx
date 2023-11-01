@@ -7,7 +7,7 @@ export default function Slider_card() {
   return(
     <div className="card_wrapper mx-10">
       <div className="card_img">
-        <Link to={`/parachutes/123`}>
+        <Link to={`/parachutes/123`}>[;;]
           <img src={par_1} alt="Parachute image" />
         </Link>
       </div>

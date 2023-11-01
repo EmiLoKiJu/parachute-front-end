@@ -19,7 +19,10 @@ export const getLogin = createAsyncThunk('login/getlogin', async ({ user }, { ge
       console.log('returning response data');
       console.log(response.data);
       if (response.data.error == "Invalid username") return null;
-      else return response.data.token;
+      else {
+        localStorage.setItem('token', response.data.token);
+        return response.data.token;
+      }
     } catch (error) {
       console.error('Error:', error);
       throw error;
@@ -36,6 +39,7 @@ const loginSlice = createSlice({
   reducers: {
     setToken: (state, action) => {
       state.token = action.payload;
+      state.isLoading = false;
     },
     clearToken: (state) => {
       state.token = null;
