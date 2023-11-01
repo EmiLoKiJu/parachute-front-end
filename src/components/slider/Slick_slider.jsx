@@ -47,12 +47,12 @@ export default function ResponsiveSlider() {
     <div className="slider-container w-[90%] mx-auto">
       <Slider {...settings}>
         {parachutes.map((parachute) => (
-          <Slider_card 
-            key={parachute.id} 
-            name={parachute.name} 
-            rent={parachute.rent} 
-            photo_link={parachute.photo_link} 
-            description={parachute.description}
+          <Slider_card
+            key={parachute.id}
+            id={parachute.id}
+            name={parachute.name}
+            rent={parachute.rent}
+            photo_link={parachute.photo_link}
           />
         ))}
       </Slider>
