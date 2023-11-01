@@ -10,7 +10,9 @@ import Slider_card from "@/components/slider/Slider_card";
 export default function ResponsiveSlider() {
   const dispatch = useDispatch();
   const { token } = useSelector((store) => store.login);
+  const { parachutes } = useSelector((store) => store.parachutes)
 
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (token) {
       dispatch(getParachutes(token));
@@ -44,12 +46,15 @@ export default function ResponsiveSlider() {
   return (
     <div className="slider-container w-[90%] mx-auto">
       <Slider {...settings}>
-        <Slider_card/>
-        <Slider_card/>
-        <Slider_card/>
-        <Slider_card/>
-        <Slider_card/>
-        <Slider_card/>
+        {parachutes.map((parachute) => (
+          <Slider_card 
+            key={parachute.id} 
+            name={parachute.name} 
+            rent={parachute.rent} 
+            photo_link={parachute.photo_link} 
+            description={parachute.description}
+          />
+        ))}
       </Slider>
     </div>
   );
