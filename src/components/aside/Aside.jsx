@@ -1,11 +1,13 @@
 import NavL from "@/components/Navlink";
+import { useSelector } from "react-redux";
 
 export default function Aside() {
+  const { token } = useSelector((store) => store.login);
   
   const links = [
     {label: 'Home', href: "/"},
     {label: 'Parachutes', href: "/parachutes"},
-    {label: 'Login', href: "/login"},
+    {label: token === null ? 'Login' : 'User', href: "/login"},
     {label: 'C', href: "/C"},
   ]
 

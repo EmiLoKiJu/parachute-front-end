@@ -18,10 +18,10 @@ export const getLogin = createAsyncThunk('login/getlogin', async ({ user }, { ge
       });
       console.log('returning response data');
       console.log(response.data);
-      if (response.data.error == "Invalid username") return null;
+      if (response.data.error == "Invalid username") throw new Error('Invalid username');
       else {
         localStorage.setItem('token', response.data.token);
-        return response.data.token;
+        return { token: response.data.token, user: user };
       }
     } catch (error) {
       console.error('Error:', error);
@@ -35,7 +35,7 @@ export const getLogin = createAsyncThunk('login/getlogin', async ({ user }, { ge
 
 const loginSlice = createSlice({
   name: 'login',
-  initialState: { token: null, isLoading: true },
+  initialState: { token: null, isLoading: true, user: '' },
   reducers: {
     setToken: (state, action) => {
       state.token = action.payload;
@@ -48,11 +48,13 @@ const loginSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getLogin.pending, (state) => ({ ...state, isLoading: true }))
-      .addCase(getLogin.fulfilled, (state, action) => ({
-        ...state,
-        isLoading: false,
-        token: action.payload,
-      }))
+      .addCase(getLogin.fulfilled, (state, action) => {
+        if (action.payload !== null) {
+          state.token = action.payload.token;
+          state.user = action.payload.user;
+          state.isLoading = false;
+        }
+      })
       .addCase(getLogin.rejected, (state) => ({ ...state, isLoading: false }));
   },
 });
