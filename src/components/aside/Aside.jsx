@@ -1,5 +1,7 @@
-import NavL from "@/components/Navlink";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import NavL from "@/components/Navlink";
+import Logo from "@/assets/images/logo/logo.png";
 
 export default function Aside() {
   const { token } = useSelector((store) => store.login);
@@ -21,7 +23,11 @@ export default function Aside() {
 
   return(
     <aside className="navigation_panel pl-2">
-        <p className="px-3">Navigation panel is here and logo here</p>
+        <div className="logo_wrapper">
+          <Link to="/">
+            <img src={Logo} alt="Logo picture" />
+          </Link>
+        </div>
         <nav>
           <ul>
             { links_ajax }
