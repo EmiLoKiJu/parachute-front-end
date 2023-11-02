@@ -4,7 +4,7 @@ import ErrorPage from '@/components/ErrorPage';
 import MainSlider from '@/components/content/Main_slider';
 import DetailsCard from '@/pages/Details_page';
 
-import ComponentB from '@/components/content/ComponentB';
+import Login from '@/components/content/Login';
 import ComponentC from '@/components/content/ComponentC';
 
 
@@ -27,8 +27,8 @@ export default function Router() {
           children: []
         },
         {
-          path: "/B",
-          element: < ComponentB/>,
+          path: "/login",
+          element: < Login/>,
           children: []
         },
         {
