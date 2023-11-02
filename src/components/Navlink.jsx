@@ -14,6 +14,8 @@ export default function NavL({label, href}) {
           "font-viga tracking-wider"
         ].join(" ")
       }
+
+      onClick={() => console.log('Update state')}
     >
       {label}
     </NavLink>
