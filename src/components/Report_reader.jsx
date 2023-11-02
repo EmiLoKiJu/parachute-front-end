@@ -1,6 +1,6 @@
 function Li_temp() {
   return(
-    <li className="py-2 px-4 flex items-center justify-between">
+    <li className="py-1 px-4 flex items-center justify-between">
       <span>Finance Fee</span>
       <span>$140</span>
     </li>
