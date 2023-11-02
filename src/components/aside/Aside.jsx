@@ -1,13 +1,15 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import NavL from "@/components/Navlink";
 import Logo from "@/assets/images/logo/logo.png";
 
 export default function Aside() {
+  const { token } = useSelector((store) => store.login);
   
   const links = [
     {label: 'Home', href: "/"},
     {label: 'Parachutes', href: "/parachutes"},
-    {label: 'Login', href: "/login"},
+    {label: token === null ? 'Login' : 'User', href: "/login"},
     {label: 'C', href: "/C"},
   ]
 
