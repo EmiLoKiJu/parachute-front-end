@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { token, user } = useSelector((store) => store.login);
+  const { token, user, isLoading } = useSelector((store) => store.login);
   const [username, setUsername] = useState('');
   const [loginError, setLoginError] = useState('');
 
@@ -67,6 +67,11 @@ const Login = () => {
               Logout
             </button>
           </form>
+        </div>
+      )}
+      {isLoading === true && (
+        <div className="text-center">
+          <img src="https://assets-v2.lottiefiles.com/a/4b96cd0e-1164-11ee-b18f-5fe294a16463/a7YAZLDNWQ.gif" className="w-1/2 h-auto mx-auto" alt="Centered Image" />
         </div>
       )}
     </div>
