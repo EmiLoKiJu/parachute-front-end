@@ -14,7 +14,7 @@ export default function ResponsiveSlider() {
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    if (token) {
+    if (token && parachutes.length == 0) {
       dispatch(getParachutes(token));
     }
   }, [token]);

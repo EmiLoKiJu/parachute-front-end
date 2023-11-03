@@ -21,6 +21,7 @@ export const getLogin = createAsyncThunk('login/getlogin', async ({ user }, { ge
       if (response.data.error == "Invalid username") throw new Error('Invalid username');
       else {
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('user', user);
         return { token: response.data.token, user: user };
       }
     } catch (error) {
@@ -44,6 +45,9 @@ const loginSlice = createSlice({
     clearToken: (state) => {
       state.token = null;
     },
+    setUser: (state, action) => {
+      state.user = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -61,4 +65,4 @@ const loginSlice = createSlice({
 
 export default loginSlice.reducer;
 
-export const { setToken, clearToken } = loginSlice.actions;
+export const { setUser, setToken, clearToken } = loginSlice.actions;
