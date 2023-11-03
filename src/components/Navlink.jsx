@@ -1,7 +1,16 @@
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
 
+import { setOff } from "@/redux/Humberger/humbergerSlice.js"
+
 export default function NavL({label, href}) {
+  const dispatch = useDispatch();
+
+  const switchHandler = () => {
+    dispatch(setOff())
+  }
+
   return(
     <NavLink
       to={href}
@@ -15,7 +24,7 @@ export default function NavL({label, href}) {
         ].join(" ")
       }
 
-      onClick={() => console.log('Update state')}
+      onClick={switchHandler}
     >
       {label}
     </NavLink>
