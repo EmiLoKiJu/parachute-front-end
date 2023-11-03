@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function Li_temp({ text, cost }) {
   return(
     <li className="py-1 px-4 flex items-center justify-between">
@@ -6,6 +8,11 @@ function Li_temp({ text, cost }) {
     </li>
   );
 }
+
+Li_temp.propTypes = {
+  text: PropTypes.string.isRequired,
+  cost: PropTypes.number.isRequired,
+};
 
 export default function ReportReader({ parachute }) {
   const rentdec = parseFloat(parachute.rent);
@@ -21,3 +28,9 @@ export default function ReportReader({ parachute }) {
     </div>
   );
 }
+
+ReportReader.propTypes = {
+  parachute: PropTypes.shape({
+    rent: PropTypes.string.isRequired,
+  }).isRequired,
+};

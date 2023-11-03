@@ -17,13 +17,13 @@ function App() {
       dispatch(setToken(storedToken));
       dispatch(setUser(storedUser));
     }
-  }, [dispatch]);
+  }, [dispatch, storedToken, storedUser]);
 
   useEffect(() => {
     if (token && parachutes.length == 0) {
       dispatch(getParachutes(token));
     }
-  }, [token]);
+  }, [dispatch, token, parachutes]);
 
   return (
       <Router />
