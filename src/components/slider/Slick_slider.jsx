@@ -1,23 +1,12 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { useDispatch, useSelector } from "react-redux";
-import { getParachutes } from "@/redux/parachutes/parachutesSlice";
-import { useEffect } from 'react';
+import { useSelector } from "react-redux";
 
 import Slider_card from "@/components/slider/Slider_card";
 
 export default function ResponsiveSlider() {
-  const dispatch = useDispatch();
-  const { token } = useSelector((store) => store.login);
   const { parachutes } = useSelector((store) => store.parachutes)
-
-// eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    if (token && parachutes.length == 0) {
-      dispatch(getParachutes(token));
-    }
-  }, [token]);
 
   let settings = {
     dots: false,
