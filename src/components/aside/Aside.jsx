@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
 import NavL from "@/components/Navlink";
 import Logo from "@/assets/images/logo/logo.png";
 
@@ -22,8 +23,8 @@ export default function Aside() {
   });
 
   return(
-    <aside className="navigation_panel pl-2">
-        <div className="logo_wrapper">
+    <aside className="navigation_panel bg-gray-100 h-full pt-16 lg:pt-0 pl-2 flex flex-col">
+        <div className="logo_wrapper max-w-[50%] mx-auto order-last lg:order-first">
           <Link to="/">
             <img src={Logo} alt="Logo picture" />
           </Link>

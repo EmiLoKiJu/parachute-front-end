@@ -1,11 +1,23 @@
-import { FaGripLines } from 'react-icons/fa'
+import { useDispatch, useSelector } from "react-redux"
+import { setOnOff } from "@/redux/Humberger/humbergerSlice.js"
+import { FaWindowClose, FaGripLines } from 'react-icons/fa'
 
 export default function Humberger_btn() {
+  const { isClose } = useSelector((store) => (store.humberger_switch))
+
+  const dispatch = useDispatch();
+  const switchHandler = () => {
+    dispatch(setOnOff())
+  }
+
   return(
-    <button className="fixed mt-[5%] sm:mt-[2%] ml-[5%] p-[1px] w-[50px] text-center border text-white bg-brand_green lg:hidden"
-            onClick={() => console.log('Hi, from Navlink')}
+    <button className="z-20 absolute mx-5 my-4 p-1 w-[40px] lg:hidden hover:text-brand_green"
+            onClick={switchHandler}
     >
-      <FaGripLines className="inline"/>
+      {
+        isClose ? <FaGripLines className="w-full h-full"/>
+                : <FaWindowClose className="w-full h-full"/>
+      }
     </button>
   );
 }
