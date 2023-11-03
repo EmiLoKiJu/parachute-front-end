@@ -16,7 +16,7 @@ export default function Humberger_btn() {
     >
       {
         isClose ? <FaGripLines className="w-full h-full"/>
-        : <FaWindowClose className="w-full h-full"/>
+                : <FaWindowClose className="w-full h-full"/>
       }
     </button>
   );
