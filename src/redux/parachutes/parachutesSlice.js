@@ -1,19 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// export const getParachutes = createAsyncThunk('parachutes/getParachutes', async (token) => {
-//   console.log('this is the token: ')
-//   console.log(token);
-//   const response = await axios.get(
-//     'https://parachute-back-end.onrender.com/parachutes',
-//     { headers: {
-//         'Authorization': `bearer ${token}`
-//       }
-//     }
-//   );
-//   return response.data.parachutes;
-// });
-
 export const getParachutes = createAsyncThunk('parachutes/getParachutes', async (token) => {
   try {
     console.log('this is the token: ')
