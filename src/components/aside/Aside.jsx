@@ -8,9 +8,13 @@ export default function Aside() {
   const { token } = useSelector((store) => store.login);
   
   const links = [
-    {label: 'Home', href: "/"},
+    {label: 'Parachutes', href: "/"},
     {label: token === null ? 'Login' : 'User', href: "/login"},
     {label: 'Add Parachute', href: "/newParachute"},
+    {label: 'Reserve', href:'/reserveParachute'},
+    {label: 'Reservations', href: '/myreservations'},
+    {label: 'Delete', href: '/deleteParachute'},
+
   ]
 
   const links_ajax = links.map((link, i)=>{

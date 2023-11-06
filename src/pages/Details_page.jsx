@@ -25,7 +25,7 @@ export default function DetailsPage() {
       <div className="px-6 lg:px-10">
         <div className="flex items-center justify-between flex-wrap">
           <div className="card_img lg:w-[50%] mx-auto">
-            <img src={parachute.photo_link} alt="Big Parachute picture" />
+            <img className="" src={parachute.photo_link} alt="Big Parachute picture" />
           </div>
           <div className="card_reports w-full lg:w-[32%]">
             <div className="text-right">
@@ -44,9 +44,9 @@ export default function DetailsPage() {
                     <img src={color_wheel} alt="color circle" />
                   </div>
                 </div>
-                <button className="py-[10px] px-3 w-[120px] lg:w-[180px] border rounded-[50px] text-white bg-brand_green">
+                <Link to="/reserveParachute" className="py-[10px] px-3 w-[120px] lg:w-[180px] text-center border rounded-[50px] text-white bg-brand_green">
                   Reserve
-                </button>
+                </Link>
               </div>
             </div>
           </div>
