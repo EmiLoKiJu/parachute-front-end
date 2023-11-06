@@ -2,6 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useSelector } from "react-redux";
+import Loading_state from '@/components/Loading';
 
 import Slider_card from "@/components/slider/Slider_card";
 
@@ -33,9 +34,7 @@ export default function ResponsiveSlider() {
   };
 
   if (isLoading === true) return (
-    <div className="text-center">
-      <img src="https://assets-v2.lottiefiles.com/a/4b96cd0e-1164-11ee-b18f-5fe294a16463/a7YAZLDNWQ.gif" className="w-1/2 h-auto mx-auto" alt="Centered Image" />
-    </div>
+    <Loading_state />
   );
 
   return (

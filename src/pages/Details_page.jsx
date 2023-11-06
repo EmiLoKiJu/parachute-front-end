@@ -7,16 +7,16 @@ import ReportReader from '@/components/Report_reader';
 import color_wheel from '@/assets/images/color_wheel.png';
 import { useSelector } from "react-redux";
 
+import Loading_state from '@/components/Loading';
+
 export default function DetailsPage() {
   const { id } = useParams();
   const { parachutes } = useSelector((store) => store.parachutes)
 
-  const parachute = parachutes[id]
+  const parachute = parachutes[id - 1]
   console.log(parachute)
   if (parachutes.length == 0) return (
-    <div className="text-center">
-      <img src="https://assets-v2.lottiefiles.com/a/4b96cd0e-1164-11ee-b18f-5fe294a16463/a7YAZLDNWQ.gif" className="w-1/2 h-auto mx-auto" alt="Centered Image" />
-    </div>
+    <Loading_state />
   );
 
   return(

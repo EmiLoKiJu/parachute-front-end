@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getLogin } from '@/redux/authentication/authenticationSlice';
 import { clearToken } from '@/redux/authentication/authenticationSlice';
 import { useNavigate } from 'react-router-dom';
+import Loading_state from '@/components/Loading';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -70,9 +71,7 @@ const Login = () => {
         </div>
       )}
       {isLoading === true && (
-        <div className="text-center">
-          <img src="https://assets-v2.lottiefiles.com/a/4b96cd0e-1164-11ee-b18f-5fe294a16463/a7YAZLDNWQ.gif" className="w-1/2 h-auto mx-auto" alt="Centered Image" />
-        </div>
+        <Loading_state />
       )}
     </div>
   )
