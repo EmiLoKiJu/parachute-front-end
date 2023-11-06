@@ -18,7 +18,7 @@ export default function ReportReader({ parachute }) {
   const rentdec = parseFloat(parachute.rent);
   return (
     <div>
-      <ul className="bg-gray-300">
+      <ul className="[&>*:nth-child(odd)]:bg-gray-300">
         <Price_li text={'Price per hour:'} cost={rentdec} />
         <Price_li text={'Price per day:'} cost={rentdec * 12} />
         <Price_li text={'Price per week:'} cost={rentdec * 6 * 12} />
