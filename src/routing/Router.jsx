@@ -17,7 +17,7 @@ export default function Router() {
       errorElement: <ErrorPage />,
       children: [
         {
-          path: "/parachutes",
+          path: "/",
           element: < MainSlider/>,
           children: []
         },

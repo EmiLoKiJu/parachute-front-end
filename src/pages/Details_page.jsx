@@ -35,7 +35,7 @@ export default function DetailsPage() {
                   <ReportReader parachute={parachute} />
               </div>
               <div className="button_wheel mt-8">
-                <Link to="/parachutes" className="text-xs font-semibold">
+                <Link to="/" className="text-xs font-semibold">
                   DISCOVER MORE MODELS
                   <span className="text-brand_color text-lg"> &gt; </span>
                 </Link>
@@ -53,7 +53,7 @@ export default function DetailsPage() {
         </div>
       </div>
       <div className="home_btn">
-        <Link to="/parachutes" className="back_home w-[90px] p-3 text-right text-white hover:text-white mt-10 rounded-tr-[35px] rounded-br-[35px] bg-brand_green">
+        <Link to="/" className="back_home w-[90px] p-3 text-right text-white hover:text-white mt-10 rounded-tr-[35px] rounded-br-[35px] bg-brand_green">
           <TbCaretLeft className="inline-block text-[25px] leading-[35px]"/>
         </Link>
       </div>

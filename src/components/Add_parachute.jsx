@@ -49,7 +49,7 @@ export default function AddParachute() {
       });
     
     resetForm();
-    navigate('/parachutes');
+    navigate('/');
   };
 
   const inputHandler = (e) => {

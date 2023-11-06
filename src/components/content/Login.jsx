@@ -21,7 +21,7 @@ const Login = () => {
         setLoginError(resultAction.error.message);
       } else if (resultAction.payload !== undefined) {
         localStorage.setItem('token', resultAction.payload.token);
-        navigate('/parachutes');
+        navigate('/');
       }
     });
   };
