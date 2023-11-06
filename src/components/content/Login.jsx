@@ -30,7 +30,7 @@ const Login = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center h-[85vh] bg-gray-100">
       {token === null && (
       <div className="w-full max-w-xs">
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
