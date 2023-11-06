@@ -1,23 +1,13 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { useDispatch, useSelector } from "react-redux";
-import { getParachutes } from "@/redux/parachutes/parachutesSlice";
-import { useEffect } from 'react';
+import { useSelector } from "react-redux";
+import Loading_state from '@/components/Loading';
 
 import Slider_card from "@/components/slider/Slider_card";
 
 export default function ResponsiveSlider() {
-  const dispatch = useDispatch();
-  const { token } = useSelector((store) => store.login);
-  const { parachutes } = useSelector((store) => store.parachutes)
-
-// eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    if (token && parachutes.length == 0) {
-      dispatch(getParachutes(token));
-    }
-  }, [token]);
+  const { parachutes, isLoading } = useSelector((store) => store.parachutes)
 
   let settings = {
     dots: false,
@@ -42,6 +32,10 @@ export default function ResponsiveSlider() {
       }
     ]
   };
+
+  if (isLoading === true) return (
+    <Loading_state />
+  );
 
   return (
     <div className="slider-container w-[90%] mx-auto">

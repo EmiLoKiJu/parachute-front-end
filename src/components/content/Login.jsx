@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getLogin } from '@/redux/authentication/authenticationSlice';
 import { clearToken } from '@/redux/authentication/authenticationSlice';
 import { useNavigate } from 'react-router-dom';
+import Loading_state from '@/components/Loading';
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { token, user } = useSelector((store) => store.login);
+  const { token, user, isLoading } = useSelector((store) => store.login);
   const [username, setUsername] = useState('');
   const [loginError, setLoginError] = useState('');
 
@@ -68,6 +69,9 @@ const Login = () => {
             </button>
           </form>
         </div>
+      )}
+      {isLoading === true && (
+        <Loading_state />
       )}
     </div>
   )

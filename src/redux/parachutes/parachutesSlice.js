@@ -22,7 +22,7 @@ export const getParachutes = createAsyncThunk('parachutes/getParachutes', async 
 
 const parachutesSlice = createSlice({
   name: 'parachutes',
-  initialState: { parachutes: [], isLoading: true },
+  initialState: { parachutes: [], isLoading: false },
   extraReducers: (builder) => {
     builder
       .addCase(getParachutes.pending, (state) => ({ ...state, isLoading: true }))

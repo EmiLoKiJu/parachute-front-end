@@ -1,27 +1,39 @@
 import { TbCaretLeft } from 'react-icons/tb'
+import { useParams } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 import ReportReader from '@/components/Report_reader';
 
 import color_wheel from '@/assets/images/color_wheel.png';
-import par_1 from '@/assets/images/parachutes/par-1.png';
+import { useSelector } from "react-redux";
+
+import Loading_state from '@/components/Loading';
 
 export default function DetailsPage() {
+  const { id } = useParams();
+  const { parachutes } = useSelector((store) => store.parachutes)
+
+  const parachute = parachutes[id - 1]
+  console.log(parachute)
+  if (parachutes.length == 0) return (
+    <Loading_state />
+  );
+
   return(
     <div className="relative card_details_container
                    "
     >
       <div className="px-6 lg:px-10">
         <div className="flex items-center justify-between flex-wrap">
-          <div className="card_img lg:w-[70%] mx-auto">
-            <img src={par_1} alt="Big Parachute picture" />
+          <div className="card_img lg:w-[50%] mx-auto">
+            <img src={parachute.photo_link} alt="Big Parachute picture" />
           </div>
-          <div className="card_reports w-full lg:w-[25%]">
+          <div className="card_reports w-full lg:w-[32%]">
             <div className="text-right">
               <div className="reporter_container">
-                  <h6 className="text-xs font-bold tracking-widest">NEW PARACHUTES</h6>
-                  <span className="text-xs">- Small description</span>
-                  <ReportReader/>
+                  <h6 className="text-2xl font-bold tracking-widest">{parachute.name}</h6>
+                  <span className="text-s">- {parachute.description}</span>
+                  <ReportReader parachute={parachute} />
               </div>
               <div className="button_wheel mt-8">
                 <Link to="/parachutes" className="text-xs font-semibold">

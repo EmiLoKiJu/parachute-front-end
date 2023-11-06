@@ -36,7 +36,7 @@ export const getLogin = createAsyncThunk('login/getlogin', async ({ user }, { ge
 
 const loginSlice = createSlice({
   name: 'login',
-  initialState: { token: null, isLoading: true, user: '' },
+  initialState: { token: null, isLoading: false, user: '' },
   reducers: {
     setToken: (state, action) => {
       state.token = action.payload;
