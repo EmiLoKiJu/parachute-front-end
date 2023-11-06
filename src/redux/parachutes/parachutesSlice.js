@@ -60,7 +60,7 @@ dispatch(postParachutes({
 
 const parachutesSlice = createSlice({
   name: 'parachutes',
-  initialState: { parachutes: [], isLoading: false },
+  initialState: { parachutes: [], isLoading: false, isUploading: false },
   extraReducers: (builder) => {
     builder
       .addCase(getParachutes.pending, (state) => ({ ...state, isLoading: true }))
@@ -69,7 +69,13 @@ const parachutesSlice = createSlice({
         isLoading: false,
         parachutes: action.payload,
       }))
-      .addCase(getParachutes.rejected, (state) => ({ ...state, isLoading: false }));
+      .addCase(getParachutes.rejected, (state) => ({ ...state, isLoading: false }))
+      .addCase(postParachutes.pending, (state) => ({ ...state, isUploading: true }))
+      .addCase(postParachutes.fulfilled, (state) => ({
+        ...state,
+        isUploading: false
+      }))
+      .addCase(postParachutes.rejected, (state) => ({ ...state, isUploading: false }));
   },
 });
 
