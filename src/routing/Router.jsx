@@ -5,7 +5,7 @@ import MainSlider from '@/components/content/Main_slider';
 import DetailsCard from '@/pages/Details_page';
 
 import Login from '@/components/content/Login';
-import ComponentC from '@/components/content/ComponentC';
+import AddParachute from '@/components/Add_parachute';
 
 
 
@@ -32,8 +32,8 @@ export default function Router() {
           children: []
         },
         {
-          path: "/C",
-          element: < ComponentC/>,
+          path: "/newParachute",
+          element: < AddParachute />,
           children: []
         },
       ]},

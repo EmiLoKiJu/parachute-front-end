@@ -11,7 +11,7 @@ export default function Aside() {
     {label: 'Home', href: "/"},
     {label: 'Parachutes', href: "/parachutes"},
     {label: token === null ? 'Login' : 'User', href: "/login"},
-    {label: 'C', href: "/C"},
+    {label: 'Add Parachute', href: "/newParachute"},
   ]
 
   const links_ajax = links.map((link, i)=>{
