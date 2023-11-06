@@ -56,10 +56,11 @@ const parachutesSlice = createSlice({
   name: 'parachutes',
   initialState: { parachutes: [], isLoading: false, isUploading: false },
   reducers: {
-    setParachute: (state, action) => {
-      return ({ ...state, parachutes: [...state.parachutes, action.payload] });
-    },
+    setParachute: (state, action) => (
+      { ...state, parachutes: [...state.parachutes, action.payload] }
+    )
   },
+  
   extraReducers: (builder) => {
     builder
       .addCase(getParachutes.pending, (state) => ({ ...state, isLoading: true }))

@@ -44,15 +44,11 @@ export default function AddParachute() {
     )
       .then((resultAction) => {
         if (!postParachutes.rejected.match(resultAction)) {
-          const createdParachute = resultAction.payload;
-          console.log(createdParachute);
-          setParachute(createdParachute);
+          dispatch(setParachute(resultAction.payload));
         }
-      })
-      .catch((error) => {
-        console.error('Error:', error);
       });
-  
+    
+    resetForm();
     navigate('/parachutes');
   };
 
