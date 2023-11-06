@@ -13,12 +13,50 @@ export const getParachutes = createAsyncThunk('parachutes/getParachutes', async 
       }
     );
     console.log (response.data);
+    const sortedData = response.data.sort((a, b) => a.id - b.id);
+    return sortedData;
+  } catch (error) {
+    console.error('Error');
+    return error.response.data;
+  }
+});
+
+export const postParachutes = createAsyncThunk('parachutes/postParachutes', async ({token, body}) => {
+  try {
+    console.log('this is the token: ')
+    console.log(token);
+    const response = await axios.post(
+      'https://parachute-back-end.onrender.com/parachutes',
+      body,
+      { headers: {
+          'Authorization': `bearer ${token}`
+        }
+      }
+    );
+    console.log (response.data);
     return response.data;
   } catch (error) {
     console.error('Error');
     return error.response.data;
   }
 });
+
+/*
+To call this function:
+
+dispatch(postParachutes({
+  token: 'your_token_here',
+  body: {
+    "photo_link": "https://freesvg.org/img/1549153478.png",
+    "name": "Testing-again",
+    "city": "Santiago",
+    "rent": "4.9",
+    "description": "A parachute that does work sometimes",
+    "min_duration": 1
+  }
+}));
+
+*/
 
 const parachutesSlice = createSlice({
   name: 'parachutes',
