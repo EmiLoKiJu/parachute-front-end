@@ -5,11 +5,12 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 
 import Loading_state from '@/components/Loading';
+import { setParachute } from '@/redux/parachutes/parachutesSlice';
 
 
 export default function AddParachute() {
   const { token} = useSelector((store) => store.login);
-  const {  isUploading , b} = useSelector((store) => store.parachutes);
+  const {  isUploading } = useSelector((store) => store.parachutes);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -33,17 +34,26 @@ export default function AddParachute() {
 
     // now lets to push to the api 
     dispatch(
-      postParachutes(
-        {
-          token: token,
-          body: {
-            ...formDB, "photo_link": "https://freesvg.org/img/1549153478.png"
-          }
+      postParachutes({
+        token: token,
+        body: {
+          ...formDB,
+          "photo_link": "https://freesvg.org/img/1549153478.png"
+        },
+      })
+    )
+      .then((resultAction) => {
+        if (!postParachutes.rejected.match(resultAction)) {
+          const createdParachute = resultAction.payload;
+          console.log(createdParachute);
+          setParachute(createdParachute);
         }
-      )
-    );
-
-    resetForm();    
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  
+    navigate('/parachutes');
   };
 
   const inputHandler = (e) => {

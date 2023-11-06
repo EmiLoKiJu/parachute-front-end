@@ -18,8 +18,6 @@ const Login = () => {
   
     dispatch(getLogin({ user, token })).then((resultAction) => {
       if (resultAction.error) {
-        console.log('Login failed');
-        console.log(token);
         setLoginError(resultAction.error.message);
       } else if (resultAction.payload !== undefined) {
         localStorage.setItem('token', resultAction.payload.token);

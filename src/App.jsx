@@ -12,7 +12,6 @@ function App() {
   const { parachutes } = useSelector((store) => store.parachutes)
 
   useEffect(() => {
-    console.log(storedToken);
     if (storedToken) {
       dispatch(setToken(storedToken));
       dispatch(setUser(storedUser));

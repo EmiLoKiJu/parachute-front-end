@@ -3,8 +3,6 @@ import axios from 'axios';
 
 export const getParachutes = createAsyncThunk('parachutes/getParachutes', async (token) => {
   try {
-    console.log('this is the token: ')
-    console.log(token);
     const response = await axios.get(
       'https://parachute-back-end.onrender.com/parachutes',
       { headers: {
@@ -12,7 +10,6 @@ export const getParachutes = createAsyncThunk('parachutes/getParachutes', async 
         }
       }
     );
-    console.log (response.data);
     const sortedData = response.data.sort((a, b) => a.id - b.id);
     return sortedData;
   } catch (error) {
@@ -23,8 +20,6 @@ export const getParachutes = createAsyncThunk('parachutes/getParachutes', async 
 
 export const postParachutes = createAsyncThunk('parachutes/postParachutes', async ({token, body}) => {
   try {
-    console.log('this is the token: ')
-    console.log(token);
     const response = await axios.post(
       'https://parachute-back-end.onrender.com/parachutes',
       body,
@@ -33,7 +28,6 @@ export const postParachutes = createAsyncThunk('parachutes/postParachutes', asyn
         }
       }
     );
-    console.log (response.data);
     return response.data;
   } catch (error) {
     console.error('Error');
@@ -61,6 +55,11 @@ dispatch(postParachutes({
 const parachutesSlice = createSlice({
   name: 'parachutes',
   initialState: { parachutes: [], isLoading: false, isUploading: false },
+  reducers: {
+    setParachute: (state, action) => {
+      return ({ ...state, parachutes: [...state.parachutes, action.payload] });
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getParachutes.pending, (state) => ({ ...state, isLoading: true }))
@@ -80,3 +79,5 @@ const parachutesSlice = createSlice({
 });
 
 export default parachutesSlice.reducer;
+
+export const { setParachute } = parachutesSlice.actions;

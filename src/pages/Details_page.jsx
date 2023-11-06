@@ -14,7 +14,6 @@ export default function DetailsPage() {
   const { parachutes } = useSelector((store) => store.parachutes)
 
   const parachute = parachutes[id - 1]
-  console.log(parachute)
   if (parachutes.length == 0) return (
     <Loading_state />
   );
