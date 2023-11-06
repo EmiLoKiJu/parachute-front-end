@@ -41,6 +41,23 @@ export const postParachutes = createAsyncThunk('parachutes/postParachutes', asyn
   }
 });
 
+/*
+To call this function:
+
+dispatch(postParachutes({
+  token: 'your_token_here',
+  body: {
+    "photo_link": "https://freesvg.org/img/1549153478.png",
+    "name": "Testing-again",
+    "city": "Santiago",
+    "rent": "4.9",
+    "description": "A parachute that does work sometimes",
+    "min_duration": 1
+  }
+}));
+
+*/
+
 const parachutesSlice = createSlice({
   name: 'parachutes',
   initialState: { parachutes: [], isLoading: false },
