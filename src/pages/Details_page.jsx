@@ -25,7 +25,7 @@ export default function DetailsPage() {
       <div className="px-6 lg:px-10">
         <div className="flex items-center justify-between flex-wrap">
           <div className="card_img lg:w-[50%] mx-auto">
-            <img className="" src={parachute.photo_link} alt="Big Parachute picture" />
+            <img className="small-img-2" src={parachute.photo_link} alt="Big Parachute picture" />
           </div>
           <div className="card_reports w-full lg:w-[32%]">
             <div className="text-right">

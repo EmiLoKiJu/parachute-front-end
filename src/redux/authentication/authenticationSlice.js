@@ -33,10 +33,10 @@ const loginSlice = createSlice({
   reducers: {
     setToken: (state, action) => {
       state.token = action.payload;
-      state.isLoading = false;
     },
     clearToken: (state) => {
       state.token = null;
+      state.user= '';
     },
     setUser: (state, action) => {
       state.user = action.payload;

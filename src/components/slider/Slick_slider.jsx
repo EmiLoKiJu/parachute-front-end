@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useSelector } from "react-redux";
 import Loading_state from '@/components/Loading';
+import { Link } from "react-router-dom";
 
 import Slider_card from "@/components/slider/Slider_card";
 
@@ -36,6 +37,10 @@ export default function ResponsiveSlider() {
   if (isLoading === true) return (
     <Loading_state />
   );
+
+  if (parachutes.length === 0) return (
+    <div className="text-center text-3xl text-red-500"><Link to='/login'>Please log in</Link></div>
+  )
 
   return (
     <div className="slider-container w-[90%] mx-auto">

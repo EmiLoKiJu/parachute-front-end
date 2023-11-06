@@ -1,5 +1,5 @@
 import { postParachutes } from '@/redux/parachutes/parachutesSlice.js';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { useState } from "react";
