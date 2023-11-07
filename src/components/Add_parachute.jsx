@@ -45,7 +45,6 @@ const AddParachute = () => {
       .then((resultAction) => {
         if (!postParachutes.rejected.match(resultAction)) {
           dispatch(setParachute(resultAction.payload));
-          console.log(resultAction.payload.id);
           navigate('/parachutes/' + resultAction.payload.id);
           setCreatedID(resultAction.payload.id);
         }
