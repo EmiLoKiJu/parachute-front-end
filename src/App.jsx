@@ -4,7 +4,7 @@ import { setToken, setUser } from '@/redux/authentication/authenticationSlice';
 import { getParachutes } from "@/redux/parachutes/parachutesSlice";
 import Router from "@/routing/Router"
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   const storedToken = localStorage.getItem('token');
   const storedUser = localStorage.getItem('user');
