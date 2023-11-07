@@ -5,6 +5,7 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
+    - [Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -47,6 +48,12 @@ Link for the [back-end](https://github.com/EmiLoKiJu/parachute-back-end)
 - **Vite**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Live Demo <a name="live-demo"></a>
+
+Feel free to check the live demo for this project
+(deployed with render.com) [link to live demo](https://parachute-front-end.onrender.com/)
+
 
 ## 💻 Getting Started <a name="getting-started"></a>
 <!-- https://github.com/EmiLoKiJu/parachute-front-end -->
@@ -160,6 +167,8 @@ If you like this project give it a star ⭐️
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+Credits to [Murat Korkmaz](https://www.behance.net/muratk), author of the (original design)[https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign]
 
 ** I would like to thank to Microverse for giving this inspiring project **
 
