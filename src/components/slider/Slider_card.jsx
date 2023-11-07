@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Social_media from '@/components/Social_media';
 import PropTypes from 'prop-types';
 
-export default function Slider_card({ name, photo_link, rent, id }) {
+const Slider_card = ({ name, photo_link, rent, id }) => {
   return(
     <div className="card_wrapper mx-10">
       <div className="flex justify-center w-full h-full">
@@ -28,3 +28,5 @@ Slider_card.propTypes = {
   rent: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };
+
+export default Slider_card;

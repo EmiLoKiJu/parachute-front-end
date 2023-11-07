@@ -14,7 +14,7 @@ Price_li.propTypes = {
   cost: PropTypes.number.isRequired,
 };
 
-export default function ReportReader({ parachute }) {
+const ReportReader = ({ parachute }) => {
   const rentdec = parseFloat(parachute.rent);
   return (
     <div>
@@ -34,3 +34,5 @@ ReportReader.propTypes = {
     rent: PropTypes.string.isRequired,
   }).isRequired,
 };
+
+export default  ReportReader;

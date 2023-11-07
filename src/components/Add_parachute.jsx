@@ -8,7 +8,7 @@ import Loading_state from '@/components/Loading';
 import { setParachute } from '@/redux/parachutes/parachutesSlice';
 
 
-export default function AddParachute() {
+const AddParachute = () => {
   const { token} = useSelector((store) => store.login);
   const {  isUploading, isLoading } = useSelector((store) => store.parachutes);
   const navigate = useNavigate();
@@ -143,3 +143,5 @@ export default function AddParachute() {
     </div>
   );
 }
+
+export default AddParachute;

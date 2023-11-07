@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import NavL from "@/components/Navlink";
 import Logo from "@/assets/images/logo/logo.png";
 
-export default function Aside() {
+const Aside = () => {
   const { token } = useSelector((store) => store.login);
   
   const links = [
@@ -40,3 +40,5 @@ export default function Aside() {
     </aside>
   );
 }
+
+export default Aside;

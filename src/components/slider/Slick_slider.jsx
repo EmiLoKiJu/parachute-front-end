@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 import Slider_card from "@/components/slider/Slider_card";
 
-export default function ResponsiveSlider() {
+const ResponsiveSlider = ()=> {
   const { parachutes, isLoading } = useSelector((store) => store.parachutes)
 
   let settings = {
@@ -58,3 +58,5 @@ export default function ResponsiveSlider() {
     </div>
   );
 }
+
+export default ResponsiveSlider;

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import { setOff } from "@/redux/Humberger/humbergerSlice.js"
 
-export default function NavL({label, href}) {
+const NavL = ({label, href}) => {
   const dispatch = useDispatch();
 
   const switchHandler = () => {
@@ -36,3 +36,5 @@ NavL.propTypes = {
   label: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
 };
+
+export default NavL;

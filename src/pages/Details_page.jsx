@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 import Loading_state from '@/components/Loading';
 
-export default function DetailsPage() {
+const DetailsPage = ()=> {
   const { id } = useParams();
   const { parachutes } = useSelector((store) => store.parachutes)
 
@@ -60,3 +60,5 @@ export default function DetailsPage() {
     </div>
   );
 }
+
+export default DetailsPage;

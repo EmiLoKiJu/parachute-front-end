@@ -1,6 +1,6 @@
 import ResponsiveSlider from "@/components/slider/Slick_slider";
 
-export default function MainSlider() {
+const MainSlider = () => {
   return(
     <div className="font-viga">
       <div className="title-wrapper text-center">
@@ -16,3 +16,5 @@ export default function MainSlider() {
     </div>
   );
 }
+
+export default MainSlider;

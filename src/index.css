@@ -13,15 +13,6 @@
     src: url('@/assets/font/Viga-Regular.ttf');
   }
 
-  /* h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-heading font-mont font-normal;
-  } */
-
   h1 {
     @apply text-4xl sm:text-5xl lg:text-7xl;
   }

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { setOnOff } from "@/redux/Humberger/humbergerSlice.js"
 import { FaWindowClose, FaGripLines } from 'react-icons/fa'
 
-export default function Humberger_btn() {
+const Humberger_btn = ()=> {
   const { isClose } = useSelector((store) => (store.humberger_switch))
 
   const dispatch = useDispatch();
@@ -21,3 +21,5 @@ export default function Humberger_btn() {
     </button>
   );
 }
+
+export default Humberger_btn;

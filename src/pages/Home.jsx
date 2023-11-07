@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Aside from "@/components/aside/Aside";
 import Humberger_btn from '@/components/Humberger_btn';
 
-export default function Home() {
+const Home = ()=> {
   const { isClose } = useSelector((store) => (store.humberger_switch))
   const hide_show_popUp = isClose ? "hidden" : ""
 
@@ -21,3 +21,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
