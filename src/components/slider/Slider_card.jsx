@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 export default function Slider_card({ name, photo_link, rent, id }) {
   return(
     <div className="card_wrapper mx-10">
-      <div className="card_img">
+      <div className="flex justify-center w-full h-full">
         <Link to={`/parachutes/${id}`}>
-          <img src={photo_link} alt="Parachute image" />
+          <img src={photo_link} alt="Parachute image" className="small-img" />
         </Link>
       </div>
       <div className="card_text py-4 text-center text-gray-400 tracking-widest">

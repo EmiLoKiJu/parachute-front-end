@@ -3,10 +3,6 @@ import axios from 'axios';
 
 export const getLogin = createAsyncThunk('login/getlogin', async ({ user }, { getState }) => {
   const token = getState().login.token;
-  console.log(`token value: ${token}`);
-
-  console.log('Username:', user);
-
   if (token == null) {
     try {
       const response = await axios.post('https://parachute-back-end.onrender.com/login', {
@@ -16,8 +12,6 @@ export const getLogin = createAsyncThunk('login/getlogin', async ({ user }, { ge
           'Content-Type': 'application/json',
         },
       });
-      console.log('returning response data');
-      console.log(response.data);
       if (response.data.error == "Invalid username") throw new Error('Invalid username');
       else {
         localStorage.setItem('token', response.data.token);
@@ -29,7 +23,6 @@ export const getLogin = createAsyncThunk('login/getlogin', async ({ user }, { ge
       throw error;
     }
   } else {
-    console.log('we tried');
     return token;
   }
 });
@@ -40,10 +33,10 @@ const loginSlice = createSlice({
   reducers: {
     setToken: (state, action) => {
       state.token = action.payload;
-      state.isLoading = false;
     },
     clearToken: (state) => {
       state.token = null;
+      state.user= '';
     },
     setUser: (state, action) => {
       state.user = action.payload;

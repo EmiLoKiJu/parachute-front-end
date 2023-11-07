@@ -2,30 +2,24 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLogin } from '@/redux/authentication/authenticationSlice';
 import { clearToken } from '@/redux/authentication/authenticationSlice';
-import { useNavigate } from 'react-router-dom';
 import Loading_state from '@/components/Loading';
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { token, user, isLoading } = useSelector((store) => store.login);
   const [username, setUsername] = useState('');
   const [loginError, setLoginError] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const user = username;
-  
-    dispatch(getLogin({ user, token })).then((resultAction) => {
-      if (resultAction.error) {
-        console.log('Login failed');
-        console.log(token);
-        setLoginError(resultAction.error.message);
-      } else if (resultAction.payload !== undefined) {
-        localStorage.setItem('token', resultAction.payload.token);
-        navigate('/parachutes');
-      }
-    });
+    const resultAction = await dispatch(getLogin({ user, token }));
+    if (resultAction.payload !== undefined) {
+      localStorage.setItem('token', resultAction.payload.token);
+    } else if (resultAction.error) {
+      setLoginError(resultAction.error.message);
+    }
   };
 
   const handleLogout = (event) => {
@@ -36,7 +30,7 @@ const Login = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center h-[85vh] bg-gray-100">
       {token === null && (
       <div className="w-full max-w-xs">
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -62,12 +56,19 @@ const Login = () => {
       )}
       {token !== null && (
         <div className="w-full max-w-xs">
-          <h3 className="mb-4">You are logged in as: {user}</h3>
+          <h3 className="mb-4 text-center">You are logged in as: {user}</h3>
           <form onSubmit={handleLogout}>
-            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-              Logout
-            </button>
+            <div className="flex justify-center"> {/* Center the button horizontally */}
+              <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Logout
+              </button>
+            </div>
           </form>
+          <Link to="/" className="flex justify-center mt-4"> {/* Center the button horizontally */}
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+              Go to all parachutes
+            </button>
+          </Link>
         </div>
       )}
       {isLoading === true && (

@@ -3,9 +3,9 @@ import Home from '@/pages/Home';
 import ErrorPage from '@/components/ErrorPage';
 import MainSlider from '@/components/content/Main_slider';
 import DetailsCard from '@/pages/Details_page';
-
+import ComponentC from '@/components/content/ComponentC.jsx'
 import Login from '@/components/content/Login';
-import ComponentC from '@/components/content/ComponentC';
+import AddParachute from '@/components/Add_parachute';
 
 
 
@@ -17,7 +17,7 @@ export default function Router() {
       errorElement: <ErrorPage />,
       children: [
         {
-          path: "/parachutes",
+          path: "/",
           element: < MainSlider/>,
           children: []
         },
@@ -32,8 +32,23 @@ export default function Router() {
           children: []
         },
         {
-          path: "/C",
-          element: < ComponentC/>,
+          path: "/newParachute",
+          element: < AddParachute />,
+          children: []
+        },
+        {
+          path: "/reserveParachute",
+          element: < ComponentC title="Reserve Parachute" />,
+          children: []
+        },
+        {
+          path: "/myreservations",
+          element: < ComponentC title="My Reservations" />,
+          children: []
+        },
+        {
+          path: "/deleteParachute",
+          element: < ComponentC title="Delete Parachute" />,
           children: []
         },
       ]},
