@@ -21,7 +21,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [parachute-front-end] <a name="about-project"></a>
+# 📖 parachute-front-end <a name="about-project"></a>
 parachute-front-end, is the frontend repository for the parachutes app.
 Link for the [back-end](https://github.com/EmiLoKiJu/parachute-back-end)
 
