@@ -59,6 +59,8 @@ Feel free to check the live demo for this project
 
 [Link to the front-end kanban board](https://github.com/EmiLoKiJu/parachute-front-end/projects/1)
 
+[Link to the screenshot of the initial state of the kanban board](https://user-images.githubusercontent.com/84760694/278127098-ae9f47c2-67e2-4672-b8ac-f9c74c96e80f.png)
+
 ## 💻 Getting Started <a name="getting-started"></a>
 <!-- https://github.com/EmiLoKiJu/parachute-front-end -->
 
