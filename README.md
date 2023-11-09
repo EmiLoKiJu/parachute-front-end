@@ -168,7 +168,7 @@ If you like this project give it a star ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Credits to [Murat Korkmaz](https://www.behance.net/muratk), author of the (original design)[https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign]
+Credits to [Murat Korkmaz](https://www.behance.net/muratk), author of the [original design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
 ** I would like to thank to Microverse for giving this inspiring project **
 
