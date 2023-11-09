@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'roboto';
+    src: url('@/assets/font/Roboto-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'viga';
+    src: url('@/assets/font/Viga-Regular.ttf');
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl lg:text-7xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-[28px] md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+
+  a,
+  button {
+    @apply cursor-pointer inline-block;
+  }
+
+  a,
+  button,
+  img,
+  input,
+  span {
+    @apply transition-all duration-300;
+  }
+
+  *:focus {
+    @apply outline-none no-underline;
+  }
+
+  input[type=submit] {
+    @apply cursor-pointer;
+  }
+
+  a:hover {
+    @apply text-brand_color;
+  }
+}
+
+/* custom arrow keys for the slider  */
+.slick-next,
+.slick-prev {
+  z-index: 2;
+  width: 80px;
+  height: auto;
+  visibility: visible;
+  opacity: 0.3;
+  padding: 10px 16px;
+  background-color: gray;
+}
+
+.slick-prev {
+  text-align: right;
+  left: -5.6%;
+  right: auto;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+.slick-next {
+  right: -5.6%;
+  left: auto;
+  text-align: left;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+}
+
+.slick-next:hover,
+.slick-prev:hover {
+  background-color: #99c110;
+  opacity: 1;
+}
+
+.slick-next::before,
+.slick-prev::before {
+  width: 40px;
+  line-height: 35px;
+  font-size: 25px;
+  color: white;
+}
+
+/* client slider custom dot  */
+.slick-dots li.slick-active button::before {
+  color: #f9b809;
+}
+
+.small-img {
+  border: 2px solid black;
+  margin: 0 0%;
+  width: 250px;
+  height: 350px;
+  background-color: rgb(165, 165, 165);
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+.small-img-2 {
+  border: 2px solid black;
+  margin: 0 0%;
+  width: 450px;
+  height: 650px;
+  background-color: rgb(165, 165, 165);
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 740px) {
+  .slick-next,
+  .slick-prev {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .slick-next,
+  .slick-prev {
+    width: 60px;
+  }
+
+  .small-img-2 {
+    border: 2px solid black;
+    margin: 0 0%;
+    width: 250px;
+    height: 350px;
+    background-color: rgb(165, 165, 165);
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+  }
+}
