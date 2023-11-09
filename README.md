@@ -6,6 +6,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Live Demo](#live-demo)
+    - [Kanban board](#kanban-board)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -54,6 +55,9 @@ Link for the [back-end](https://github.com/EmiLoKiJu/parachute-back-end)
 Feel free to check the live demo for this project
 (deployed with render.com) [link to live demo](https://parachute-front-end.onrender.com/)
 
+### Kanban Board <a name="kanban-board"></a>
+
+[Link to the front-end kanban board](https://github.com/EmiLoKiJu/parachute-front-end/projects/1)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 <!-- https://github.com/EmiLoKiJu/parachute-front-end -->
